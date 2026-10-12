@@ -5,13 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise #36</title>
     <style>
+      body {
+        background-color: #dcd8d4;
+        color: black;
+      }
+      .container {
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-inline: auto;
+        border: 1px solid rgb(20, 20, 20);
+        border-radius: 10px;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+        padding: 10px;
+      }
+
       #colorPreview {
         width: 200px;
         height: 200px;
         margin: 20px 0;
+        border-radius: 10px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      #colorPreview:hover {
+        transform: scale(1.1);
       }
       #colorHistory {
         list-style: none;
@@ -20,19 +45,38 @@
       #colorHistory li {
         margin: 5px 0;
       }
+      label {
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 21px;
+      }
+      button {
+        border: none;
+        background-color: #152c53;
+        border-radius: 10px;
+        padding: 8px;
+      }
+      button:hover {
+        background-color: #686565;
+      }
     </style>
   </head>
   <body>
-    <h1>Intersctive Color Picker</h1>
-    <label for="colorPicker">Choose a Color: </label>
-    <input type="color" name="color" id="colorPicker" />
+    <div class="container">
+      <h1>Intersctive Color Picker</h1>
+      <label for="colorPicker">Choose a Color: </label>
+      <input type="color" name="color" id="colorPicker" />
 
-    <div id="colorPreview">Color Preview:</div>
+      <div id="colorPreview">Color Preview:</div>
 
-    <h2>Color Histroy:</h2>
-    <ul id="colorHistory"></ul>
+      <h2>Color Histroy:</h2>
+      <ul id="colorHistory"></ul>
 
-    <button id="clearHistoryButton">Clear History</button>
+      <button id="clearHistoryButton">Clear History</button>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
